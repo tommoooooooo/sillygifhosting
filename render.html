@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="render.css">
+    <title>Lea's Homepage | A Series of In Stars And Time Pages</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preload" href="./assets/VCR_OSD_MONO.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="./assets/BestTen-CRT.otf" as="font" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" href="./assets/OpenDyslexic3-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="./assets/OpenDyslexic3-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+</head>
+<body>
+    <main id="mainHomepage" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <p>Lea's Homepage</p>
+        <p style="font-size: 1rem; margin-bottom: 10px;">A list of web pages that I made about In Stars And Time</p>
+        <h6 style="padding-top: 10px;"><span>CHANGE FONT</span></h6>
+        <div id="buttonList" style="padding: 10px 0; gap: 10px;">
+            <button id="font1Button" class="uiButton" style="font-family: VCR_OSD_MONO; width: auto;" onclick="changeFont('VCR_OSD_MONO')">
+                <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                Default
+            </button>
+            <button id="font2Button" class="uiButton" style="font-family: sans-serif, Helvetica, Arial; width: auto;" onclick="changeFont('Arial')">
+                <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                Arial
+            </button>
+            <button id="font3Button" class="uiButton" style="font-family: OpenDyslexic3; font-size: 1.4rem; width: auto;" onclick="changeFont('OpenDyslexic3')">
+                <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                OpenDyslexic3
+            </button>
+        </div>
+        <div id="homePage" style="position: relative; width: 816px; height: 623px; background-image: url(./assets/mainMenu.gif);">
+            <img width="816" height="623" src="./assets/logo.png" style="display: absolute; top: 0; left: 0; z-index: 1;">
+            <div id="selectionMenu" style="position: absolute; padding: 15px; background-color: black; bottom: 60px; right: 60px;">
+                <img id="cornerUIUpLeft" src="./assets/uicorner.svg" width="6px" height="6px">
+                <img id="cornerUIUpRight" src="./assets/uicorner.svg" width="6px" height="6px">
+                <img id="cornerUIDownLeft" src="./assets/uicorner.svg" width="6px" height="6px">
+                <img id="cornerUIDownRight" src="./assets/uicorner.svg" width="6px" height="6px">
+                <div id="topUIBar"></div>
+                <div id="bottomUIBar"></div>
+                <div id="leftUIBar"></div>
+                <div id="rightUIBar"></div>
+                <img id="topEndBarLeft" src="./assets/endBar.svg" width="4px" height="4px">
+                <img id="topEndBarRight" src="./assets/endBar.svg" width="4px" height="4px">
+                <img id="bottomEndBarLeft" src="./assets/endBar.svg" width="4px" height="4px">
+                <img id="bottomEndBarRight" src="./assets/endBar.svg" width="4px" height="4px">
+                <img id="leftEndBarTop" src="./assets/endBar.svg" width="4px" height="4px">
+                <img id="leftEndBarBottom" src="./assets/endBar.svg" width="4px" height="4px">
+                <img id="rightEndBarTop" src="./assets/endBar.svg" width="4px" height="4px">
+                <img id="rightEndBarBottom" src="./assets/endBar.svg" width="4px" height="4px">
+                <button id="profileButton" class="uiButton" style="justify-content: center;" onclick="location.href='./profile.html'">
+                    <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                    <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                    <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                    <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                    Profile
+                </button>
+                <button id="partyButton" class="uiButton" style="justify-content: center;" onclick="location.href='./mainmenu.html'">
+                    <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                    <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                    <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                    <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                    Party
+                </button>
+                <button id="battleButton" class="uiButton" style="justify-content: center;" onclick="location.href='./battle_full.html'">
+                    <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                    <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                    <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                    <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                    Battle
+                </button>
+                <button id="dialogueButton" class="uiButton" style="justify-content: center;" onclick="location.href='./dialogue_beta.html'">
+                    <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                    <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                    <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                    <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                    Dialogue
+                </button>
+                <button id="gameOverButton" class="uiButton" style="justify-content: center;" onclick="location.href='./gameover.html'">
+                    <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                    <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                    <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                    <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                    Game Over
+                </button>
+                <button id="aboutMeButton" class="uiButton" style="justify-content: center;" onclick="location.href='./aboutme.html'">
+                    <img id="cornerUpLeft" src="./assets/cursorBorderA.png">
+                    <img id="cornerDownRight" src="./assets/cursorBorderA.png">
+                    <img id="cornerUpRight" src="./assets/cursorBorderB.png">
+                    <img id="cornerDownLeft" src="./assets/cursorBorderB.png">
+                    Credit
+                </button>
+            </div>
+        </div>
+        <div style="position: relative; margin-top: 10px; padding: 10px; width: 816px;">
+            <img id="cornerUIUpLeft" src="./assets/uicorner.svg" width="6px" height="6px">
+            <img id="cornerUIUpRight" src="./assets/uicorner.svg" width="6px" height="6px">
+            <img id="cornerUIDownLeft" src="./assets/uicorner.svg" width="6px" height="6px">
+            <img id="cornerUIDownRight" src="./assets/uicorner.svg" width="6px" height="6px">
+            <div id="topUIBar"></div>
+            <div id="bottomUIBar"></div>
+            <div id="leftUIBar"></div>
+            <div id="rightUIBar"></div>
+            <img id="topEndBarLeft" src="./assets/endBar.svg" width="4px" height="4px">
+            <img id="topEndBarRight" src="./assets/endBar.svg" width="4px" height="4px">
+            <img id="bottomEndBarLeft" src="./assets/endBar.svg" width="4px" height="4px">
+            <img id="bottomEndBarRight" src="./assets/endBar.svg" width="4px" height="4px">
+            <img id="leftEndBarTop" src="./assets/endBar.svg" width="4px" height="4px">
+            <img id="leftEndBarBottom" src="./assets/endBar.svg" width="4px" height="4px">
+            <img id="rightEndBarTop" src="./assets/endBar.svg" width="4px" height="4px">
+            <img id="rightEndBarBottom" src="./assets/endBar.svg" width="4px" height="4px">
+            <p id="appDescription" style="text-align: center; font-size: 1.2rem;">Welcome!!</p>
+        </div>
+        <p style="text-align: center; font-size: 1.2rem;">Update for keyboard accessiblity.</p>
+    </main>
+    <script src="render.js"></script> 
+</body>
+</html>

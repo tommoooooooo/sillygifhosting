@@ -1,0 +1,1332 @@
+@font-face {
+    font-family: "VCR_OSD_MONO";
+    src: url("./assets/VCR_OSD_MONO.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "BESTTEN_CRT";
+    src: url("./assets/BestTen-CRT.otf") format('opentype');
+}
+
+@font-face {
+    font-family: 'OpenDyslexic3';
+    src: url('./assets/OpenDyslexic3-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenDyslexic3';
+    src: url('./assets/OpenDyslexic3-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html {
+    background-color: black;
+
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+    line-height: 1.3;
+}
+
+#grayText {
+    color: gray;
+    flex: 1;
+}
+
+body {
+    font-family: "VCR_OSD_MONO";
+
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    font-size: 1.7rem;
+
+    color: white;
+
+    width: 100vw;
+    min-height: 100vh;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#mainMenu {
+    width: 816px;
+    height: 624px;
+    
+    display: grid;
+
+    background-color: black;
+
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 11.3% 88.7%;
+}
+
+#dialogueMain {
+    background-color: black;
+}
+
+#nameUI, #infoUI, #characterImgUI {
+    padding: 24px 24px;
+}
+
+#navigationUI {
+    padding: 0px 10px;
+}
+
+#nameUI {
+    display: flex;
+    position: relative;
+
+    grid-column: 1 / span 2;
+    justify-content: center;
+    align-items: center;
+}
+
+#infoUI {
+    position: relative;
+}
+
+#characterInfoUI {
+    display: grid;
+    position: relative;
+
+    grid-template-rows: 13% 87%;
+}
+
+#characterImgUI {
+    display: flex;
+    position: relative;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#navigationUI {
+    display: flex;
+    position: relative;
+
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#infoUI {
+    display: grid;
+    position: relative;
+
+    grid-template-rows: 14% 60.5% 25.5%;
+}
+
+#introductionText {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+}
+
+#descriptionText {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    grid-row: 2 / 2;
+
+    white-space: pre-wrap; 
+    overflow-wrap: break-word;
+    
+}
+
+#weaknessText {
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-container span {
+    flex-basis: 52%;
+}
+
+.flex-container p {
+    flex-basis: 48%;
+}
+
+#weaknessText span {
+    display: flex;
+    align-items: center;
+}
+
+#weaknessIcon {
+    position: absolute;
+    left: 55%;
+    bottom: 24px;
+}
+
+#characterCraft {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+#profileImage {
+    height: 100%;
+    width: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-size: cover;
+}
+
+#immunePart {
+    display: none;
+}
+
+.uiButton {
+    position: relative;
+
+    width: 219px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    padding-left: 10px;
+
+    text-align: left;
+	background: none;
+	color: inherit;
+	border: transparent 2px solid;
+    border-radius: 2px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+}
+
+.uiButton.active,
+.uiButton:hover,
+.uiButton:focus {
+    border: white 2px solid;
+}
+
+#leftButton {
+    position: absolute;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+    right: 12px;
+    margin: 0 auto;
+}
+
+#rightButton {
+    position: absolute;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    left: 12px;
+    margin: 0 auto;
+}
+
+#repeatButton {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    animation-name: imageswitch;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+
+@keyframes imageswitch {
+    0% {
+        opacity:1;
+    }
+
+    49% {
+        opacity:1;
+    }
+
+    50% {
+        opacity:0;
+    }
+
+    100% {
+        opacity:0;
+  }
+}
+
+#statPage {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;  
+
+    display: none;
+}
+
+#personalIntroduction {
+    display: none;
+}
+
+#statStats, #personalIntroduction {
+    position: relative;
+}
+
+#statStatsName,#personalName {
+    color: gray;
+}
+
+#statStatsNumber,#personalNumber {
+    position: absolute;
+    top: 0;
+    left: 43%;
+}
+
+#statExpName {
+    color: gray;
+}
+
+#statExp {
+    position: relative;
+}
+
+#statExpNumber {
+    position: absolute;
+    top: 0;
+    left: 60%;
+}
+
+#settingPanel {
+    display: none;
+    position: fixed;
+    
+    padding: 24px;
+    z-index: 2;
+
+    max-height: 80vh;
+
+    background-color: black;
+    flex-direction: column;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    overflow-y: scroll;
+
+    border: white 2px solid;
+}
+
+
+.inputRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+.inputRow label {
+    flex-basis: 50%;
+    text-align: left;
+    margin-right: 10px;
+}
+.inputRow input, .inputRow select, .inputRow textarea, .inputRow button {
+    flex-basis: 50%;
+}
+.inputRow button img {
+    margin-right: 5px;
+}
+.inputRow input[type="range"] {
+    flex-basis: 50%;
+    width: auto;
+}
+
+#craftInput {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-auto-flow: row;
+}
+
+#statInput {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-auto-flow: column;
+}
+
+#expInput {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+}
+
+input, select {
+    text-align: left;
+	background: white;
+    color: black;
+    margin: 5px;
+	border: transparent 2px solid;
+    border-radius: 2px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#cornerUIUpLeft {
+    position: absolute;
+
+    left: 1px;
+    top: 1px;
+}
+
+#cornerUIUpRight {
+    position: absolute;
+
+    right: 1px;
+    top: 1px;
+}
+
+#cornerUIDownLeft {
+    position: absolute;
+
+    bottom: 1px;
+    left: 1px;
+}
+
+#cornerUIDownRight {
+    position: absolute;
+
+    bottom: 1px;
+    right: 1px;
+}
+
+#topUIBar {
+    background-color: white;
+
+    position: absolute;
+
+    top: 2px;
+    left: 12px;
+    margin: 0 auto;
+
+    width: calc(100% - 24px);
+    height: 4px;
+}
+
+#leftUIBar {
+    background-color: white;
+
+    position: absolute;
+
+    top: 12px;
+    left: 2px;
+    margin: auto 0;
+
+    height: calc(100% - 24px);
+    width: 4px;
+}
+
+#bottomUIBar {
+    background-color: white;
+
+    position: absolute;
+
+    bottom: 2px;
+    left: 12px;
+    margin: 0 auto;
+
+    width: calc(100% - 24px);
+    height: 4px;
+}
+
+#rightUIBar {
+    background-color: white;
+
+    position: absolute;
+
+    top: 12px;
+    right: 2px;
+    margin: auto 0;
+
+    height: calc(100% - 24px);
+    width: 4px;
+}
+
+#topEndBarLeft {
+    position: absolute;
+
+    top: 2px;
+    left: 8px;
+}
+
+#topEndBarRight {
+    position: absolute;
+
+    top: 2px;
+    right: 8px;
+
+    transform: scaleX(-1);
+}
+
+#bottomEndBarLeft {
+    position: absolute;
+
+    bottom: 2px;
+    left: 8px;
+}
+
+#bottomEndBarRight {
+    position: absolute;
+
+    bottom: 2px;
+    right: 8px;
+
+    transform: scaleX(-1);
+}
+
+#leftEndBarTop {
+    position: absolute;
+
+    top: 8px;
+    left: 2px;
+
+    transform: rotate(90deg);
+}
+
+#leftEndBarBottom {
+    position: absolute;
+
+    bottom: 8px;
+    left: 2px;
+
+    transform: rotate(270deg);
+}
+
+#rightEndBarTop {
+    position: absolute;
+
+    top: 8px;
+    right: 2px;
+
+    transform: rotate(90deg);
+}
+
+#rightEndBarBottom {
+    position: absolute;
+
+    bottom: 8px;
+    right: 2px;
+
+    transform: rotate(270deg);
+}
+
+#cornerUpLeft, #cornerUpRight, #cornerDownLeft, #cornerDownRight {
+    display: none;
+}
+
+.uiButton.active #cornerUpLeft,
+.uiButton:hover #cornerUpLeft,
+.uiButton:focus #cornerUpLeft {
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    animation: moveupleft 0.5s infinite linear alternate;
+}
+
+.uiButton.active #cornerUpRight,
+.uiButton:hover #cornerUpRight,
+.uiButton:focus #cornerUpRight {
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    transform: scale(-1);
+    animation: moveupright 0.5s infinite linear alternate;
+}
+
+.uiButton.active #cornerDownLeft,
+.uiButton:hover #cornerDownLeft,
+.uiButton:focus #cornerDownLeft {
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    animation: movedownleft 0.5s infinite linear alternate;
+}
+
+.uiButton.active #cornerDownRight,
+.uiButton:hover #cornerDownRight,
+.uiButton:focus #cornerDownRight {
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    transform: scale(-1);
+    animation: movedownright 0.5s infinite linear alternate;
+}
+
+#arrowUI {
+    position: absolute;
+    margin: auto 0;
+    bottom: 0;
+
+    animation-name: arrowanimation;
+    animation-iteration-count: infinite;
+    animation-duration: 0.7s;
+}
+
+@keyframes moveupleft {
+    0% {
+        top: -10px;
+        left: -10px;
+    }
+    
+    100% {
+        top: -20px;
+        left: -20px;
+    }
+}
+
+@keyframes moveupright {
+    0% {
+        top: -10px;
+        right: -10px;
+    }
+    
+    100% {
+        top: -20px;
+        right: -20px;
+    }
+}
+    
+@keyframes movedownleft {
+    0% {
+        bottom: -10px;
+        left: -10px;
+    }
+    
+    100% {
+        bottom: -20px;
+        left: -20px;
+    }
+}
+
+@keyframes movedownright {
+    0% {
+        bottom: -10px;
+        right: -10px;
+    }
+    
+    100% {
+        bottom: -20px;
+        right: -20px;
+    }
+}
+
+@keyframes arrowanimation {
+    0% {
+        bottom: 4px;
+    }
+
+    49% {
+        bottom: 4px;
+    }
+
+    50% {
+        bottom: 0px;
+    }
+
+    100% {
+        bottom: 0px;
+  }
+}
+
+#gameMainMenu {
+    position: relative;
+
+    width: 810px;
+    height: 620px;
+
+    background-image: url(./assets/mainBgImage.png);
+
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-size: cover;
+}
+
+#frameMenu {
+    position: absolute;
+
+    width: 810px;
+    height: 620px;
+
+    z-index: 2;
+    background-color: transparent;
+    color: transparent;
+}
+#gameMenuText {
+    position: absolute;
+
+    top: 15px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin: auto;
+
+    width: 251px;
+    height: 56px;
+
+    background-color: black;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+}
+
+#gameMenuItem {
+    position: absolute;
+
+    top: 75px;
+    
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin: auto;
+
+    width: 480px;
+    height: 83px;
+    
+    background-color: black;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+}
+
+#healthBackground {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: absolute;
+    bottom: 92px;
+
+    height: 120px;
+    width: 800px;
+
+    margin-left: 8px;
+    margin-right: 8px;
+
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.statusGroup {
+    position: relative;
+
+    width: 129px;
+    height: 93px;
+}
+
+#layoutStatus {
+    position: absolute;
+
+    bottom: 0;
+
+    width: 129px;
+    height: 62px;
+}
+
+.healthNumber {
+    position: absolute;
+
+    bottom: 11px;
+    right: 5px;
+
+    font-size: 1.15rem;
+}
+
+.levelNumber {
+    position: absolute;
+
+    bottom: 38px;
+    right: 5px;
+
+    font-size: 1.15rem;
+}
+
+.statusName {
+    position: absolute;
+
+    top: -5px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    text-shadow: 2px 0 rgba(0,0,0,0.5), -2px 0 rgba(0,0,0,0.5), 0 2px rgba(0,0,0,0.5), 0 -2px rgba(0,0,0,0.5),
+             1px 1px rgba(0,0,0,0.5), -1px -1px rgba(0,0,0,0.5), 1px -1px rgba(0,0,0,0.5), -1px 1px rgba(0,0,0,0.5);
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.actorImage {
+    position: absolute;
+    
+    bottom: 0;
+    z-index: 0;
+
+    height: 90%;
+    margin-bottom: 8px;
+
+    text-align: center;
+}
+
+#actorBackground {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.imageContainer {
+    display: flex;
+
+    width: 204px;
+
+    justify-content: center;
+}
+
+.hideBlobLeft {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: calc(50vw - 397px);
+    height: 100vh;
+
+    z-index: 2;
+
+    background-color: black;
+}
+
+.hideBlobRight {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    
+    width: calc(50vw - 397px);
+    height: 100vh;
+    z-index: 2;
+
+    background-color: black;
+}
+
+.iconMainMenu {
+    position: relative;
+    
+    width: 58px;
+    height: 59px;
+
+    opacity: 0.3;
+
+    transition: opacity 0.1s ease-in-out;
+}
+
+.iconMainMenu:hover {
+    width: 58px;
+    height: 59px;
+
+    opacity: 1;
+}
+
+#hoverText {
+    font-size: 1.3rem;
+}
+
+#settingMainMenu {
+    display: none;
+    position: absolute;
+    
+    padding: 24px;
+    z-index: 3;
+
+    background-color: black;
+    flex-direction: column;
+}
+
+#actor1 {
+    margin-left: 20px;
+}
+
+#actor4 {
+    margin-left: 20px;
+}
+
+#dialogueUI {
+    display: flex;
+    flex-wrap: wrap;
+
+    position: relative;
+
+    width: 790px;
+    height: 148px;
+    
+    padding: 16px 16px;
+}
+
+#dialogueText {
+    white-space: normal; 
+    overflow-wrap: break-word;
+    overflow: hidden;
+
+    font-size: 1.45rem;
+}
+
+#dialogueArrow {
+    position: absolute;
+
+    bottom: 16px;
+    right: 22px;
+
+    transition: opacity 0.2s ease-in-out;
+
+    animation-name: dialoguearrowanimation;
+    animation-iteration-count: infinite;
+    animation-duration: 0.8s;
+}
+
+@keyframes dialoguearrowanimation {
+0% {
+    right: 22px;
+}
+
+24% {
+    right: 22px;
+}
+
+25% {
+    right: 24px;
+}
+
+49% {
+    right: 24px;
+}
+
+50% {
+    right: 26px;
+}
+
+74% {
+    right: 26px;
+}
+
+75% {
+    right: 24px;
+}
+
+100% {
+    right: 24px;
+}
+}
+
+
+#extraDialogueUI {
+    font-size: 1.45rem;
+
+    display: flex;
+    position: absolute;
+
+    bottom: 100%;
+    left: 0;
+
+    padding: 18px;
+
+    width: auto;
+    height: 36px;
+
+    align-items: center;
+    justify-content: center;
+
+    color: lightgray;
+}
+
+#battleUI {
+    position: relative;
+
+    width: 154px;
+    height: 178px;
+}
+
+#battleThymeBar {
+    position: absolute;
+
+    width: 140px;
+    height: 8px;
+
+    background-image: linear-gradient(to right, rgba(59,59,59,255), rgba(127,127,127,255)); 
+
+    bottom: 7px;
+    left: 7px;
+}
+
+#battleHPBar {
+    position: absolute;
+    
+    width: 140px;
+    height: 22px;
+
+    background-image: linear-gradient(to right, rgba(195,195,195,255), rgba(254,254,254,255)); 
+
+    bottom: 16px;
+    left: 7px;
+}
+
+#battleProtrait {
+    position: absolute;
+
+    width: 140px;
+    height: 132px;
+
+    background-color: black;
+
+    bottom: 39px;
+    left: 7px;
+
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-size: cover;
+}
+
+#battleHPText {
+    position: absolute;
+
+    font-size: 16px;
+    text-shadow: -1px -1px 1px rgba(106,106,106,255), 1px -1px 1px rgba(106,106,106,255), -1px 1px 1px rgba(106,106,106,255), 1px 1px 1px rgba(106,106,106,255),
+                -1px -1px 1px rgba(106,106,106,255),1px -1px 1px rgba(106,106,106,255), -1px 1px 1px rgba(106,106,106,255), 1px 1px 1px rgba(106,106,106,255);
+
+    bottom: 17px;
+    left: 10px;
+}
+
+#battleHPNumberText {
+    position: absolute;
+
+    font-size: 16px;
+    text-shadow: -1px -1px 1px rgba(106,106,106,255), 1px -1px 1px rgba(106,106,106,255), -1px 1px 1px rgba(106,106,106,255), 1px 1px 1px rgba(106,106,106,255),
+                -1px -1px 1px rgba(106,106,106,255),1px -1px 1px rgba(106,106,106,255), -1px 1px 1px rgba(106,106,106,255), 1px 1px 1px rgba(106,106,106,255);
+
+    bottom: 17px;
+    right: 10px;
+}
+
+#charDialogue {
+    height: 100px;
+}
+
+.thin {
+    font-stretch: condensed; /* This is an example; adjust as necessary */
+}
+
+.sine-wave {
+    display: inline-block;
+}
+
+.shake {
+    display: inline-block; 
+    transition: transform 0.03s ease-in-out; 
+}
+
+div {
+    display: inline-block;
+}
+
+.imageInput {
+    font-size: 1.3rem;
+    width: 225px;
+
+    display: none;
+}
+
+.bImageInput {
+    font-size: 1.3rem;
+    width: 225px;
+
+    display: none;
+}
+
+.buttonScaleDiv {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 1rem;
+    text-align: center;
+    width: 100%;
+}
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+}
+
+td {
+    text-align: left;
+}
+
+th {
+    background-color: white;
+    color: black;
+}
+
+#tagTable {
+    position: relative;
+    padding: 10px;
+    width: 60%;
+}
+
+.tutorialImage {
+    width: 40%;
+}
+
+.tutorialImage img {
+    width: 100%;
+    height: auto;
+}
+
+#buttonList {
+    display: flex;
+    flex-direction: row;
+}
+
+
+@media screen and (max-width: 550px) {
+    #settingPanel {
+        width: 85%;
+        font-size: 0.8rem;
+    }
+}
+
+
+@media screen and (max-width: 816px) {
+    #gifDisplay, #gifResult {
+        width: 95%;
+    }
+
+    #tagTable {
+        position: relative;
+        padding: 10px;
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 817px) and (max-width: 1000px) {
+    #tagTable {
+        position: relative;
+        padding: 10px;
+        width: 95%;
+    }
+
+    .tutorialImage {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1100px) {
+    #tagTable {
+        position: relative;
+        padding: 10px;
+        width: 90%;
+    }
+
+    .tutorialImage {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1200px) {
+    #tagTable {
+        position: relative;
+        padding: 10px;
+        width: 85%;
+    }
+
+    .tutorialImage {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1300px) {
+    #tagTable {
+        position: relative;
+        padding: 10px;
+        width: 80%;
+    }
+
+    .tutorialImage {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1400px) {
+    #tagTable {
+        position: relative;
+        padding: 10px;
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 1401px) and (max-width: 1500px) {
+    #tagTable {
+        position: relative;
+        padding: 10px;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #buttonList {
+        flex-direction: column;
+    }
+    
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+    }
+    thead {
+        display: flex;
+        flex-direction: column;
+    }
+    tr {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #ddd;
+    }
+    td {
+        border: none;
+        text-align: left;
+        padding: 8px;
+    }
+    .description {
+        order: 2;
+        width: 95%;
+    }
+    .tutorialImage {
+        order: 1;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .tutorialImage img {
+        width: 95%;
+        height: auto;
+    }
+}
+
+.navButton {
+    font-size: 1rem;
+
+    color: white;
+
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+h6 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #fff; 
+    line-height: 0.1em;
+    margin: 10px 0 10px; 
+} 
+ 
+h6 span { 
+    background:#000; 
+    padding:0 10px; 
+}
+
+#debug {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: red;
+    outline: 2px solid red;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+input:focus,
+textarea:focus {
+    border-color: red;
+}
+
+a:focus {
+    outline: 2px solid red;
+    outline-offset: 4px;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+.toggleButton {
+    background: none;
+    border: none;
+    color: white;
+}
